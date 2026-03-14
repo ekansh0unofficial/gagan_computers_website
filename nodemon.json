@@ -1,0 +1,12 @@
+{
+  "watch": ["src", "routes", "middleware"],
+  "ext": "js,json",
+  "ignore": [
+    "data/products.json",
+    "data/sessions.json",
+    "uploads/*",
+    "frontend/*",
+    "node_modules/*"
+  ],
+  "delay": 500
+}

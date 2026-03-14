@@ -1,0 +1,61 @@
+/* ============================================================
+   variables.css — Design Tokens  (Tech / Dark-Navy Theme)
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ── Brand ─────────────────────────────────────────────── */
+  --primary:       #00d4aa;
+  --primary-dark:  #00a882;
+  --primary-light: #5fffd6;
+  --accent:        #0ea5e9;
+  --accent-dark:   #0284c7;
+  --accent-2:      #a855f7;
+  --glow:          rgba(0,212,170,0.18);
+
+  /* ── Surfaces (dark navy) ──────────────────────────────── */
+  --bg:            #0b0f1a;
+  --surface:       #111827;
+  --surface-2:     #1c2333;
+  --surface-3:     #242f44;
+  --border:        #2a3a55;
+  --border-light:  #1e2d44;
+
+  /* ── Text ──────────────────────────────────────────────── */
+  --text:          #e8edf5;
+  --text-2:        #94a3b8;
+  --text-3:        #4a5c78;
+  --text-inv:      #0b0f1a;
+
+  /* ── Status ────────────────────────────────────────────── */
+  --success:       #22c55e;
+  --error:         #ef4444;
+  --warning:       #f59e0b;
+
+  /* ── UI ────────────────────────────────────────────────── */
+  --radius:        6px;
+  --radius-sm:     4px;
+  --radius-lg:     12px;
+  --shadow:        0 2px 12px rgba(0,0,0,0.4);
+  --shadow-md:     0 6px 28px rgba(0,0,0,0.5);
+  --shadow-lg:     0 16px 56px rgba(0,0,0,0.6);
+  --shadow-glow:   0 0 24px rgba(0,212,170,0.22);
+
+  /* ── Transitions ───────────────────────────────────────── */
+  --ease:          cubic-bezier(0.22, 1, 0.36, 1);
+  --dur:           200ms;
+
+  /* ── Layout ────────────────────────────────────────────── */
+  --nav-h:         60px;
+  --max-w:         1280px;
+  --gap:           24px;
+
+  /* ── Fonts ─────────────────────────────────────────────── */
+  --font-display:  'Rajdhani', sans-serif;
+  --font-body:     'Inter', sans-serif;
+  --font-mono:     'JetBrains Mono', monospace;
+}
+
+@media (max-width: 640px) {
+  :root { --gap: 14px; --nav-h: 56px; }
+}

@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: dukaan
+    env: node
+    buildCommand: npm install
+    startCommand: node backend/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SHOP_NAME
+        value: Dukaan
+      - key: SHOP_TAGLINE
+        value: Electronics & Gadgets — Best Prices
+      - key: WHATSAPP_NUMBER
+        sync: false        # Set this in Render dashboard — e.g. 919876543210
+      - key: UPI_ID
+        sync: false        # Set this in Render dashboard — e.g. yourname@upi
+      - key: UPI_NAME
+        sync: false        # Set this in Render dashboard — e.g. Rahul Sharma
