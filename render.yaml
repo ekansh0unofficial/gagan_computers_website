@@ -8,7 +8,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: SHOP_NAME
-        value: Dukaan
+        value: Gagan Computers
       - key: SHOP_TAGLINE
         value: Electronics & Gadgets — Best Prices
       - key: WHATSAPP_NUMBER
