@@ -6,12 +6,32 @@
   <title>Dukaan — Electronics & Gadgets</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Preload critical CSS to eliminate flash -->
+  <link rel="preload" href="styles/variables.css" as="style" />
+  <link rel="preload" href="styles/base.css" as="style" />
+  <link rel="preload" href="styles/components.css" as="style" />
+  <link rel="preload" href="styles/layout.css" as="style" />
+
+  <!-- Google Fonts — tech theme -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets in dependency order -->
   <link rel="stylesheet" href="styles/variables.css" />
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/components.css" />
   <link rel="stylesheet" href="styles/layout.css" />
   <link rel="stylesheet" href="styles/admin.css" />
+
+  <!-- Anti-flash: hide body until CSS is parsed -->
+  <style>
+    body { visibility: hidden; background: #0b0f1a; }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.body.style.visibility = "visible";
+    });
+  </script>
 </head>
 <body>
 
