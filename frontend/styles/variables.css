@@ -57,5 +57,12 @@
 }
 
 @media (max-width: 640px) {
-  :root { --gap: 14px; --nav-h: 56px; }
+  :root {
+    --gap:       14px;
+    --nav-h:     52px;
+    --radius-lg: 10px;
+  }
+}
+@media (max-width: 400px) {
+  :root { --gap: 12px; }
 }
