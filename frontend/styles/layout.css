@@ -37,7 +37,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-shrink: 0;
+  flex-shrink: 0;           /* never shrink the logo */
 }
 
 .logo-icon { font-size: 1.4rem; }
@@ -51,15 +51,37 @@
   text-transform: uppercase;
 }
 
-.logo-text span {
-  color: var(--primary);
+.logo-text span { color: var(--primary); }
+
+/* Search wrapper grows to fill available space */
+.search-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 0;             /* allow shrinking below content size */
+  max-width: 480px;
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-shrink: 0;
+  flex-shrink: 0;           /* NEVER shrink — cart must always be visible */
+}
+
+/* ── Mobile nav overrides ───────────────────────────────── */
+@media (max-width: 640px) {
+  .nav-inner { gap: 10px; padding: 0 12px; }
+  .logo-icon { font-size: 1.1rem; }
+  .logo-text { font-size: 1rem; letter-spacing: 0.03em; }
+  .search-wrapper { max-width: none; min-width: 0; }
+}
+
+@media (max-width: 420px) {
+  .nav-inner { gap: 6px; padding: 0 10px; }
+  .logo-text { font-size: 0.88rem; letter-spacing: 0.02em; }
+  .logo-icon { display: none; }
+  .nav-logo { gap: 0; }
+  .nav-btn { width: 34px; height: 34px; font-size: 0.95rem; }
 }
 
 .nav-btn {
@@ -344,13 +366,6 @@
   border-top: 1px solid var(--border);
 }
 
-/* ── Rec grid ────────────────────────────────────────────── */
-.rec-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 12px;
-}
-
 /* ── Products section header ────────────────────────────── */
 .products-header {
   display: flex;
@@ -394,59 +409,6 @@ select.sort-select option { background: var(--surface-2); color: var(--text); }
 /* ── Responsive nav search ──────────────────────────────── */
 @media (max-width: 640px) {
   .search-wrapper { max-width: none; }
-  .logo-text { font-size: 1.1rem; letter-spacing: 0.04em; }
-  .hero { padding: 36px var(--gap) 30px; }
-  .nav-inner { gap: 10px; padding: 0 12px; }
-  .logo-icon { font-size: 1.1rem; }
-}
-
-/* ── Full mobile overhaul ───────────────────────────────── */
-@media (max-width: 480px) {
-  /* Navbar */
-  .nav-inner { gap: 8px; padding: 0 10px; }
-  .logo-text { font-size: 1rem; }
-  .nav-btn { width: 34px; height: 34px; font-size: 1rem; }
-
-  /* Hero */
-  .hero { padding: 32px 12px 28px; }
-  .hero h1 { font-size: 1.7rem; letter-spacing: 0.02em; margin-bottom: 10px; }
-  .hero p { font-size: 0.85rem; margin-bottom: 20px; }
-  .hero-eyebrow { font-size: 0.62rem; padding: 4px 10px; margin-bottom: 12px; }
-  .hero-search { max-width: 100%; }
-  .hero-search .search-box { padding: 2px 12px; }
-  .hero-search .search-input { padding: 11px 0; font-size: 0.9rem; }
-  .hero-chips { gap: 6px; margin-top: 16px; }
-  .hero-chip { padding: 5px 12px; font-size: 0.75rem; }
-
-  /* Product grid: 2 columns on phones */
-  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-
-  /* Rec grid */
-  .rec-strip { margin: 0 0 24px; padding: 16px 0 4px; }
-
-  /* Page content */
-  .page-content { padding: 20px 0 60px; }
-
-  /* Checkout */
-  .checkout-layout { grid-template-columns: 1fr; gap: 16px; }
-  .checkout-card { padding: 18px 14px; }
-
-  /* Section title */
-  .section-title { font-size: 1.1rem; }
-
-  /* Sort row */
-  select.sort-select { font-size: 0.8rem; padding: 7px 28px 7px 10px; }
-
-  /* Footer */
-  .site-footer { padding: 20px 12px; font-size: 0.75rem; }
-
-  /* Admin */
-  .admin-header { padding: 16px 12px; }
-  .admin-tabs { flex-wrap: wrap; }
-  .admin-tab { padding: 7px 10px; font-size: 0.78rem; }
-}
-
-@media (max-width: 360px) {
-  .product-grid { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 1.5rem; }
+  .logo-text { font-size: 1.2rem; }
+  .hero { padding: 40px var(--gap) 36px; }
 }
